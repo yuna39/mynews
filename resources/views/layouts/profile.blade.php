@@ -11,6 +11,7 @@
         
         
         {{--各ページごとにtitleタグを入れるために@yieldで空けておく --}}
+        <title>@yield('title')</title>
         
         <!--Scripts-->
         {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
