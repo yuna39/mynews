@@ -15,7 +15,7 @@
         
         <!--Scripts-->
         {{-- Laravel標準で用意されているJavascriptを読み込みます --}}
-        <scripts src="{{ secure_asset('js/app.js') }}" defer></scripts>
+        <script src="{{ secure_asset('js/app.js') }}" defer></script>
         
         <!--Fonts-->
         <link rel="dns-prefetch" href="https: //fonts.googleapis.com/css? family=Raleway:300,400,600" rel="stylesheet" typ="text/css">
