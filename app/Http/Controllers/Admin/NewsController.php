@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\News;
+use App\History;
+use Carbon\Carbon;
+
 
 class NewsController extends Controller
 {
@@ -86,11 +89,17 @@ class NewsController extends Controller
       unset($news_form['image']);
       unset($news_form['remove']);
       unset($news_form['_token']);
-
       // 該当するデータを上書きして保存する
       $news->fill($news_form)->save();
+      
+      $history = new History;
+      $history->news_id = $news->id;
+      $history->edited_at = Carbon::now();
+      $history->save();
 
-      return redirect('admin/news');
+      
+
+      return redirect('admin/news/');
   }
   
   
