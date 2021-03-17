@@ -75,13 +75,13 @@ class ProfileController extends Controller
         unset($profile_form['remove']);
         unset($profile_form['_token']);
          
-        $profilehistory = new ProfileHistory;
-        $profilehistory->profile_id = $profile->id;
-        $profilehistory->edited_at = Carbon::now();
-        $profilehistory->save();
+        $profile_history = new ProfileHistory;
+        $profile_history->profile_id = $profile->id;
+        $profile_history->edited_at = Carbon::now();
+        $profile_history->save();
 
         //  // 該当するデータを上書きして保存する
-         $profile -> fill($profile_form)->save();
+         $profile->fill($profile_form)->save();
         //  $profile_form -> save();
          return redirect('admin/profile/');
     }
