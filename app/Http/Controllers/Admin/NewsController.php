@@ -25,7 +25,6 @@ class NewsController extends Controller
       
       $news = new News;
       $form = $request->all();
-      \Debugbar::info($form);//デバック
       
       if (isset($form['image'])) {
         $path = Storage::disk('s3')->putfile('/',$form['image'],'public');
